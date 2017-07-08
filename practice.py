@@ -404,8 +404,17 @@ def find_letter_indices(words, letter):
     ("o" does not appear in "jumps", so the result for that input is
     `None`.)
     """
-
-    return []
+    letter_place_lst = []
+    for word in words: 
+        if letter in word: 
+            for i in range(len(word)): 
+                if word[i] == letter: 
+                    letter_place_lst.append(i)
+                    break
+        else:
+            letter_place_lst.append(None)
+            
+    return letter_place_lst
 
 
 #####################################################################
